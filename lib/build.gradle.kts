@@ -40,7 +40,8 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.0")
     implementation("com.fasterxml.woodstox:woodstox-core:6.2.5")
 
-    implementation("com.google.protobuf:protobuf-kotlin:3.21.5")
+    // implementation("com.google.protobuf:protobuf-kotlin:3.21.5")
+    implementation("com.google.protobuf:protobuf-kotlin-lite:3.21.5")
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     // implementation("com.google.guava:guava:30.1.1-jre")
