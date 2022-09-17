@@ -1,0 +1,26 @@
+name: Build
+on: [push]
+jobs:
+  Build-And-Test:
+    runs-on: ubuntu-latest
+    steps:
+        uses: actions/checkout@v3
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '18'
+          distribution: 'temurin'
+      - name: Build and test with Gradle
+        run: ./gradlew clean build --no-daemon
+      - name: Generate JaCoCo Badge
+        uses: cicirello/jacoco-badge-generator@v2
+        with:
+          generate-branches-badge: true
+          jacoco-csv-file: lib/build/reports/jacoco/test/jacocoTestReport.csv
+      - name: Commit the JaCoCo badge if it changed
+        uses: EndBug/add-and-commit@v7
+        with:
+          default_author: github_actions
+          message: 'commit badge'
+          add: '.github/badges/jacoco.svg'
+
