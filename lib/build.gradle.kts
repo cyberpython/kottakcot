@@ -74,6 +74,12 @@ jacoco {
     toolVersion = "0.8.8"
 }
 
+tasks.jacocoTestReport {
+    reports {
+        csv.required.set(true)
+    }
+}
+
 publishing {
     publications {
         create<MavenPublication>("maven") {
