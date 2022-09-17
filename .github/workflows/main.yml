@@ -4,6 +4,8 @@ jobs:
   Build-And-Test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      - name: Build and test
         uses: actions/checkout@v3
       - name: Setup JDK
         uses: actions/setup-java@v3
@@ -23,4 +25,3 @@ jobs:
           default_author: github_actions
           message: 'commit badge'
           add: '.github/badges/jacoco.svg'
-
