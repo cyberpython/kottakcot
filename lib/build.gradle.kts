@@ -79,7 +79,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.cyberpython"
             artifactId = "kottakcot"
-            version = "1.0.0"
+            version = "1.0.1"
 
             from(components["java"])
         }
